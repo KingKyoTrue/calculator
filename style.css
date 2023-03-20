@@ -32,7 +32,7 @@ button {
     color: white;
 }
 
-.orange {
+.operators {
     background-color: orange;
 }
 
@@ -40,7 +40,7 @@ button {
     background-color: green;
 }
 
-.black {
+.modifiers {
     background-color: black;
     color: white; 
 }
