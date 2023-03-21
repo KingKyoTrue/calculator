@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
 </head>
 <body>
     
@@ -23,7 +24,7 @@
                 <button class="blue" id="clear-button"> C </button>
             </td>
             <td>
-                <button class="operators"> / </button>
+                <button value="/" class="operators"> / </button>
             </td>
         </tr>
         <tr>
@@ -37,7 +38,7 @@
                 <button value="9" id="9" class="numbers"> 9 </button>
             </td>
             <td>
-                <button class="operators"> * </button>
+                <button value="*" class="operators"> * </button>
             </td>
         </tr>
         <tr>
@@ -51,7 +52,7 @@
                 <button value="6" id="6" class="numbers"> 6 </button>
             </td>
             <td>
-                <button class="operators"> - </button>
+                <button value="-" class="operators"> - </button>
             </td>
         </tr>
         <tr>
@@ -65,58 +66,26 @@
                 <button value="3" id="3" class="numbers"> 3 </button>
             </td>
             <td>
-                <button class="operators"> + </button>
+                <button value="+" class="operators"> + </button>
             </td>
         </tr>
         <tr>
             <td>
-                <button class="modifiers"> +- </button>
+                <button value="invert" class="modifiers"> +- </button>
             </td>
             <td>
                 <button value="0" id="0" class="numbers"> 0 </button>
             </td>
             <td>
-                <button class="modifiers"> . </button>
+                <button value="operand" class="modifiers"> . </button>
             </td>
             <td>
-                <button id="result-button" class="green"> = </button>
+                <button value="=" id="result-button" class="green"> = </button>
             </td>
         </tr>
     </table>
     <br> <br>
 
     <span> To my <a href="grid.html"> Calculator v.2 </a></span>
-
-    <script>
-        const inputLabel = document.getElementById("calc-display");
-        
-        const numbers = document.getElementsByClassName("numbers");
-
-        const clearAllButton = document.getElementById("clear-all-button")
-
-        const clearButton = document.getElementById("clear-button")
-
-        const resultButton = document.getElementById("result-button")
-
-        const operators = document.getElementsByClassName("operators")
-
-        const modifiers = document.getElementsByClassName("modifiers")
-
-        for(let i = 0; i < numbers.length; i++){
-            numbers[i].addEventListener("click", function(){
-                const pushed = this.value;
-                inputLabel.value = inputLabel.value + pushed;
-            })
-        }
-        clearAllButton.addEventListener("click", function(){
-            inputLabel.value = "";
-        })
-
-        clearButton.addEventListener("click", function(){
-            const maxLength = inputLabel.value.length
-            inputLabel.value =inputLabel.value.substr(0, maxLength - 1)
-        })
-
-    </script>
 </body>
 </html>

@@ -28,3 +28,8 @@ clearButton.addEventListener("click", function(){
     const maxLength = inputLabel.value.length
     inputLabel.value =inputLabel.value.substr(0, maxLength - 1)
 })
+
+operators.addEventListener("click", function(){
+
+    
+})
