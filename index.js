@@ -13,13 +13,21 @@ const operators = document.getElementsByClassName("operators");
 
 const modifiers = document.getElementsByClassName("modifiers");
 
-for(let i = 0; i < numbers.length; i++){
-    numbers[i].addEventListener("click", function(){
+
+for(const element of numbers){
+    element.addEventListener("click", function(){
         const pushed = this.value;
         inputLabel.value = inputLabel.value + pushed;
 })
 }
-        
+
+for(const element of operators){
+    element.addEventListener("click",function(){
+        const pushed = this.innerHTML;
+        inputLabel.value = inputLabel.value + pushed;
+    })
+}
+
 clearAllButton.addEventListener("click", function(){
     inputLabel.value = "";
 })
@@ -29,7 +37,15 @@ clearButton.addEventListener("click", function(){
     inputLabel.value =inputLabel.value.substr(0, maxLength - 1)
 })
 
-operators.addEventListener("click", function(){
-
-    
+resultButton.addEventListener("click", function(){
+    inputLabel.value = eval(inputLabel.value);
 })
+
+inputLabel.addEventListener("input", function(){
+    const isValidInput = inputLabel.value.match(/^[0-9\+\-\*\/]$/)
+    if (isValidInput){
+        console.log("valid input");
+    } else {
+        console.log("invalid input");
+    }
+});
